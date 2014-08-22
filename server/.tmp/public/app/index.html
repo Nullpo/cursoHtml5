@@ -13,6 +13,7 @@
         Busqueda
     </div>
     <div class="content">
+        <hr />
         <form method="GET" action="http://127.0.0.1:1337/user">
             <div>
                 <input type="search" name="name" placeholder="Buscar..." required/>
@@ -21,7 +22,10 @@
                 <input type="number" name="age" placeholder="Edad" required/>
             </div>
             <div>
-                <input type="tel" name="phone" placeholder="Telefono" required/>
+                <input type="tel" name="phone" placeholder="Telefono" pattern="\d{8}"/>
+            </div>
+            <div>
+                <input type="datetime" name="favouriteColor" placeholder="Telefono"/>
             </div>
             
             <span class="vaciar">
@@ -32,13 +36,19 @@
             </span>
         </form>
     </div>
+
+
+
     <div class="footer">
-        Made with &lt;3 from CABA
+        <textarea id="response" cols="30" rows="20"></textarea>
+        <div>
+            Made with &lt;3 from CABA
+        </div>
     </div>
     <script type="text/javascript">
         $("form").submit(function(e){
-           var promise = $.getJSON(this.action,this.serialize, function(resp){
-               console.log(resp);
+           $.getJSON(this.action,$(this).serialize(), function(resp){
+               $("#response").html(JSON.stringify(resp,null," "));
            });
            return false;
         });

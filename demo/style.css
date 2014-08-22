@@ -40,7 +40,9 @@
 }
 
 .content > form .vaciar input[type="reset"] {
-    -webkit-transform: rotate(20deg) scale(2) translateX(-38px) translateY(30px);;
+    -webkit-transform: rotate(20deg) scale(2) translateX(-38px) translateY(30px);
+    -moz-transform: rotate(20deg) scale(2) translateX(-38px) translateY(30px);
+    transform: rotate(20deg) scale(2) translateX(-38px) translateY(30px);
 }
 
 .content > form .boton input[type="submit"] {

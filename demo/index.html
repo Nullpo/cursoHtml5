@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Untitled Document</title>
     <meta charset="UTF-8">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -9,11 +9,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="header">
+    <!--div class="header">
         Busqueda
-    </div>
+    </div-->
     <div class="content">
-        <hr />
         <form method="GET" action="http://127.0.0.1:1337/user">
             <div>
                 <input type="search" name="name" placeholder="Buscar..." required/>
@@ -25,9 +24,9 @@
                 <input type="tel" name="phone" placeholder="Telefono" pattern="\d{8}"/>
             </div>
             <div>
-                <input type="datetime" name="favouriteColor" placeholder="Telefono"/>
+                <input type="datetime-local" name="favouriteColor" placeholder="Telefono"/>
             </div>
-            
+
             <span class="vaciar">
                 <input type="reset" value="Vaciar">
             </span>
@@ -36,22 +35,17 @@
             </span>
         </form>
     </div>
-
-
-
     <div class="footer">
-        <textarea id="response" cols="30" rows="20"></textarea>
-        <div>
-            Made with &lt;3 from CABA
-        </div>
+         <textarea id="response" cols="30" rows="20"></textarea>
     </div>
     <script type="text/javascript">
         $("form").submit(function(e){
-           $.getJSON(this.action,$(this).serialize(), function(resp){
+            $.getJSON(this.action,$(this).serialize(), function(resp){
                $("#response").html(JSON.stringify(resp,null," "));
            });
            return false;
         });
     </script>
+
 </body>
 </html>

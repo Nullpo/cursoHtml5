@@ -25,7 +25,7 @@
     height:100%;
 }
 
-.content {
+.content > form {
     margin:0px auto;
     width:310px;
     text-align: center;
