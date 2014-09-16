@@ -1,0 +1,7 @@
+CACHE MANIFEST
+
+NETWORK:
+index.html
+
+FALLBACK:
+index.js offline.js

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <script type="text/javascript" src="online.js" ></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?&sensor=false"
+  type="text/javascript"></script>
+
+
+    <style type="text/css">
+    video#bgvid {
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto; z-index: -100;
+            background: url(polina.jpg) no-repeat;
+            background-size: cover;
+            -webkit-filter: grayscale(1) opacity(0.8);
+    }
+    article#contenido{
+        float:left;
+    }
+    #contenido:fullscreen {
+        width:100%;
+        height:100%;
+    }
+
+
+    aside{
+        float:left;
+        background-color:rgba(3,3,3,0.5);
+        color:white;
+        font-family: monospace;
+        font-weight: bolder;
+        border-radius:15px;
+        margin:5px;
+        padding:15px;
+    }
+    </style>
+</head>
+<body id="body">
+    <video autoplay loop id="bgvid">
+        <source src="videos/peliculita.mp4" type="video/mp4">
+    </video>
+    <header>
+        <input type="text" id="latitud" placeholder="Latitud"/>
+        <input type="text" id="longitud" placeholder="Longitud"/>
+        <input type="text" id="error" placeholder="Error (en metros)" />
+        <input list="tiposDeDatos" id="tipoDeResumen"  />
+        <datalist id="tiposDeDatos" >
+            <option value="Json">Formatear en Json</option>
+            <option value="Humano">Formatear para humanos</option>
+        </datalist>
+        <input type="button" id="buscar" value="Buscar en google maps" />
+        <input type="button" id="full" value="Pantalla completa!" />
+    </header>
+    <div>
+    <article id="contenido">
+    </article>
+    <aside id="resumen">
+        <p id="texto"></p>
+        <canvas id="elCanvas"></canvas>
+    </aside>
+    <aside>
+        <h3>Historial</h3>
+        <ul id="historial">
+
+        </ul>
+    </aside>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--
+Header
+Nav
+Article
+  - Section
+aside
+footer
+
+-->

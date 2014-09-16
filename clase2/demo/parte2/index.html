@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <style type="text/css">
+            video#bgvid {
+                position: fixed; right: 0; bottom: 0;
+                min-width: 100%; min-height: 100%;
+                width: auto; height: auto; z-index: -100;
+                background: url(polina.jpg) no-repeat;
+                background-size: cover;
+                -webkit-filter: grayscale(1) opacity(0.8);
+            }
+
+            #contenido{
+                float:left;
+            }
+
+            #contenido {
+                width:100%;
+                height:100%;
+            }
+
+            #divHistorial
+                {
+                    float:left;
+                    background-color:rgba(3,3,3,0.5);
+                    color:white;
+                    font-family: monospace;
+                    font-weight: bolder;
+                    border-radius:15px;
+                    margin:5px;
+                    padding:15px;
+                }
+
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js?&sensor=false"
+  type="text/javascript"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <video id="bgvid" autoplay loop>
+            <source src="video/peliculita.mp4" type="video/mp4">
+        </video>
+        <div>
+            <input type="text" id="latitud" placeholder="latitud">
+            <input type="text" id="longitud" placeholder="longitud">
+            <input type="text" id="error" placeholder="error">
+            <input type="button" id="buscar" value="buscar">
+            <input type="button" id="fullscreen" value="full">
+        </div>
+
+        <div id="contenido">
+        </div>
+        <div id="divHistorial">
+            <h3>Historial</h3>
+            <ul id="historial">
+
+            </ul>
+        </div>
+    </body>
+</html>
